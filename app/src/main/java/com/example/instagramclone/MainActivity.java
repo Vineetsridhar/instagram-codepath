@@ -24,6 +24,7 @@ import androidx.fragment.app.FragmentManager;
 
 import com.example.instagramclone.fragments.ComposeFragment;
 import com.example.instagramclone.fragments.PostFragment;
+import com.example.instagramclone.fragments.ProfileFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.parse.FindCallback;
 import com.parse.ParseException;
@@ -58,9 +59,12 @@ public class MainActivity extends AppCompatActivity {
                         fragment = new PostFragment();
                         break;
                     case R.id.action_profile:
+                        fragment = new ProfileFragment();
+                        break;
                     case R.id.compose_action:
-                    default:
                         fragment = new ComposeFragment();
+                        break;
+                    default:
                         break;
                 }
                 fragmentManager.beginTransaction().replace(R.id.flContainer, fragment).commit();
